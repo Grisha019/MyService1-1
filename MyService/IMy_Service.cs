@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ServiceModel;
 
-using System.ServiceModel;
 
 
 namespace WCFMyServiceLibrary
@@ -15,5 +14,10 @@ namespace WCFMyServiceLibrary
 
         [OperationContract]
         string ReadFromFile(string fileName = "text.txt");
+
+        [OperationContract]
+        string ReadFromFileChoice(string fileName2 = "text3.txt");
+
+
     }
 }

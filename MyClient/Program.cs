@@ -4,7 +4,7 @@ using WCFMyServiceLibrary;
 
 namespace my_client
 {
-    class Program
+    class Program : MyService
     {
         static void Main(string[] args)
         {
@@ -30,11 +30,26 @@ namespace my_client
             Console.WriteLine("Содержимое первого файла:");
             Console.WriteLine(service.ReadFromFile("text.txt"));
 
-            // Читаем из второго файла
+            /*// Читаем из второго файла
             Console.WriteLine("Содержимое второго файла:");
-            Console.WriteLine(service.ReadFromFile("text2.txt"));
+            Console.WriteLine(service.ReadFromFile("text2.txt"));*/
 
-            Console.ReadLine();
+
+            /////////////////
+
+
+            Console.WriteLine(" ");
+            Console.WriteLine("Выберите файл");
+            Console.WriteLine("a первый файл");
+            Console.WriteLine("b второй файл");
+            string choice = Console.ReadLine(); // Получаем ввод от пользователя
+            string result = service.ReadFromFileChoice(choice); // Передаем выбор в метод
+            Console.WriteLine(result); // Выводим результат
+            Console.WriteLine("Программа завершена.");
+            Console.ReadKey();
+        }
+
+
+
         }
     }
-}
